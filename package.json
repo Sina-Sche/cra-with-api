@@ -1,5 +1,6 @@
 {
   "name": "cra-with-api",
+  "private": true,
   "version": "1.0.0",
   "description": "Boilerplate for Create-React-App with an Express.js API",
   "main": "server.js",
@@ -18,6 +19,23 @@
     "url": "https://github.com/Sina-Sche/cra-with-api/issues"
   },
   "homepage": "https://github.com/Sina-Sche/cra-with-api#readme",
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-react": "^7.21.5",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
   "dependencies": {
     "express": "^4.17.1"
   }
